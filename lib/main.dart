@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:game_mini/screen/home_screen.dart';
-import 'package:game_mini/ui/pages/home_page.dart';
 
 void main() => runApp(MyApp());
 
