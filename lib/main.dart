@@ -1,20 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:game_mini/ui/pages/home.dart';
-import '';
+import 'package:game_mini/screen/home_screen.dart';
+import 'package:game_mini/ui/pages/home_page.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(MyApp());
+
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-     title: '',
-     home: HomePage(),
+      title: 'English App',
+      theme: ThemeData(
+          primarySwatch: Colors.lightBlue,
+          accentColor: Colors.indigo,
+          fontFamily: "Montserrat",
+          buttonColor: Colors.lightBlue,
+          buttonTheme: ButtonThemeData(
+              buttonColor: Colors.lightBlue,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              textTheme: ButtonTextTheme.primary)),
+      home: const HomeScreen(),
     );
   }
 }
-

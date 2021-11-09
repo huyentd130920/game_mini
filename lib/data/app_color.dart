@@ -7,10 +7,12 @@ class AppColors {
   static const primaryGold = Color(0xFF926828);
   static const primaryLink = Color(0xFF1C2433);
 
+
   static const black = Color(0xFF000000);
   static const green = Color(0xFF00FF38);
   static const green1 = Color(0xFF1A8932);
   static const blue5 = Color(0x802400FF);
+
 
   //Gold
   static const gold2 = Color(0xFFAB8843);
@@ -24,8 +26,8 @@ class AppColors {
   static const gray2 = Color(0xFF3C4858);
   static const gray4 = Color(0xFFC2CEDB);
   static const gray5 = Color(0xFFD3DCE6);
-  static const gray6 = Color(0xFFE5E9F2);
-  static const gray7 = Color(0xFFEFF2F7);
+  static const gray6 = Color(0xFF9D9D9D);
+  static const gray7 = Color(0xFFFEFEFE);
   static const gray8 = Color(0xFFF9FAFC);
   static const grayBackground = Color(0xFFF7F7FC);
 
@@ -35,7 +37,8 @@ class AppColors {
   //Secondary
   static const secondary1 = Color(0xFF1A4BB7);
   static const secondary2 = Color(0xFFFF887D);
-  static const secondary3 = Color(0xFF309FB5);
+  static const secondary3 = Color(0xFF32A1DD);
+
 
   //other
   static const white = Color(0xFFFFFFFF);
@@ -53,3 +56,25 @@ class AppColors {
   static const botNavSelected = Color(0xFF273879);
   static const botNavUnselected = Color(0xFF8492A6);
 }
+
+// 100% — FF
+// 95% — F2
+// 90% — E6
+// 85% — D9
+// 80% — CC
+// 75% — BF
+// 70% — B3
+// 65% — A6
+// 60% — 99
+// 55% — 8C
+// 50% — 80
+// 45% — 73
+// 40% — 66
+// 35% — 59
+// 30% — 4D
+// 25% — 40
+// 20% — 33
+// 15% — 26
+// 10% — 1A
+// 5% — 0D
+// 0% — 00
