@@ -39,15 +39,29 @@ class _HomeScreenState extends State<HomeScreen> {
                       itemBuilder: (context, index) {
                         return _buildQuestion(
                           snapshot.data![index],
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => QuestionPage(
-                                      list: categories[index].question ?? [],
-                                    )));
-                          },
-
+                          // onTap: () {
+                          //   showDialog(
+                          //       context: context,
+                          //       builder: (BuildContext context) {
+                          //         return new AlertDialog(
+                          //           title: new Text("Thông báo"),
+                          //           content: new Text(categories[index].name??""),
+                          //           actions: <Widget>[
+                          //             TextButton(
+                          //               onPressed: () => Navigator.pop(context, 'OK'),
+                          //               child:
+                          //               Text("Xác nhận"),
+                          //             ),
+                          //           ],
+                          //         );
+                          //       });
+                          //   // Navigator.push(
+                          //   //     context,
+                          //   //     MaterialPageRoute(
+                          //   //         builder: (context) => QuestionPage(
+                          //   //           list: categories[index].question ?? [],
+                          //   //         )));
+                          // },
                         );
                       },
                     );
@@ -57,9 +71,31 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildQuestion(QuestionListModel? questionListMode, {required VoidCallback onTap}) {
+  Widget _buildQuestion(QuestionListModel? questionListMode) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: (){
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => QuestionPage(list: [],
+                )));
+        showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: new Text("Thông báo"),
+                      content: new Text(questionListMode!.name!),
+                      actions: <Widget>[
+                        TextButton(
+                          onPressed: () => Navigator.pop(context, 'OK'),
+                          child:
+                          Text("Xác nhận"),
+                        ),
+                      ],
+                    );
+                  });
+
+      },
       child: Container(
         margin: const EdgeInsets.only(left: 16, right: 16, top: 16),
         decoration: BoxDecoration(
@@ -74,19 +110,14 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Container(
                 margin: EdgeInsets.only(right: 16),
-                height: 60,
                 decoration: BoxDecoration(
                   border: Border.all(color: AppColors.secondary3),
                   shape: BoxShape.circle,
                 ),
                 child: InkWell(
-                  onTap: () {},
-                  child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.play_arrow,
-                        color: AppColors.secondary3,
-                      )),
+                  onTap: () {
+                  },
+                  child: Icon(Icons.play_arrow, color: AppColors.secondary3),
                 )),
             Text(
               questionListMode!.name??"",
