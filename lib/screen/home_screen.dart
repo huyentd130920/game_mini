@@ -77,8 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => QuestionPage(
-                  list: categories,
+                builder: (context) => QuestionPage(list: [],
                 )));
         showDialog(
                   context: context,
