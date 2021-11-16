@@ -1,6 +1,3 @@
-
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:swipe_cards/swipe_cards.dart';
@@ -18,13 +15,6 @@ class _GamePlayState extends State<GamePlay> {
   late MatchEngine _matchEngine;
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
   List<String> _names = ["Red", "Blue", "Green", "Yellow", "Orange"];
-  List<Color> _colors = [
-    Colors.red,
-    Colors.blue,
-    Colors.green,
-    Colors.yellow,
-    Colors.orange
-  ];
   @override
   void initState() {
     for(int i = 0; i< _names.length ;i++){
@@ -60,11 +50,8 @@ class _GamePlayState extends State<GamePlay> {
               itemBuilder: (BuildContext context, int index) {
                 return Container(
                   alignment: Alignment.center,
-                  color: _swipeItems[index].content.color,
-                  child: Text(
-                    _swipeItems[index].content.text,
-                    style: TextStyle(fontSize: 100),
-                  ),
+                  color: Colors.red,
+                  child: Text("hello"),
                 );
               },
             ),

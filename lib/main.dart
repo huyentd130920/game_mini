@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20.0),
               ),
               textTheme: ButtonTextTheme.primary)),
-      home: const GamePlay(),
+      home: const HomeScreen(),
     );
   }
 }
