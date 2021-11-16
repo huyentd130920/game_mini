@@ -11,8 +11,6 @@ class ListQuestionServiceImpl implements ListQuestionService {
   @override
   Future<void> getListQuestion(
       { required OnResultData onResultData }) async {
-    print("abcbc");
-    // Uri uri = Uri.parse(Api.baseUrl + "Category/categoryList");
     Uri uri = Uri.parse(Api.baseUrl + "/Category/categoryList");
     Http.Response? response =
     await Http.get(uri).then((value) {
@@ -24,9 +22,7 @@ class ListQuestionServiceImpl implements ListQuestionService {
     if (response != null) {
       Map<String, dynamic> data =
       jsonDecode(utf8.decode(response.bodyBytes));
-      // dynamic data = json.decode(response.body);
       print("data $data");
-      // if (data != null && data != "") {
       onResultData(data['listCategory']);
       // print( onResultData(data['listCategory']));
       // }

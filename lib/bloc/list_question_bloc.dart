@@ -13,7 +13,8 @@ class ListQuestionBloc {
       Iterable i = resultData;
       print(i);
       if (i.isNotEmpty) {
-        listUSer = i.map((model) => QuestionListModel.fromJson(model)).cast<QuestionListModel>().toList();
+        listUSer = i.map((model) => QuestionListModel.fromJson(model))
+            .cast<QuestionListModel>().toList();
         list.addAll(listUSer);
         listQuestion.notify(list);
       }
