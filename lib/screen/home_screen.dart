@@ -9,7 +9,7 @@ import 'package:game_mini/ui/pages/screen_question/question_page.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key, String? title}) : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -53,20 +53,20 @@ class _HomeScreenState extends State<HomeScreen> {
             MaterialPageRoute(
                 builder: (context) =>
                     PlayGameScreen(id: int.parse(questionListMode!.id!))));
-        // showDialog(
-        //     context: context,
-        //     builder: (BuildContext context) {
-        //       return AlertDialog(
-        //         title: new Text("Thông báo"),
-        //         content: new Text(questionListMode!.name!),
-        //         actions: <Widget>[
-        //           TextButton(
-        //             onPressed: () => Navigator.pop(context, 'OK'),
-        //             child: Text("Xác nhận"),
-        //           ),
-        //         ],
-        //       );
-        //     });
+        showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: new Text("Thông báo"),
+                content: new Text(questionListMode!.name!),
+                actions: <Widget>[
+                  TextButton(
+                    onPressed: () => Navigator.pop(context, 'OK'),
+                    child: Text("Xác nhận"),
+                  ),
+                ],
+              );
+            });
       },
       child: Container(
         margin: const EdgeInsets.only(left: 16, right: 16, top: 16),
@@ -78,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: EdgeInsets.all(5),
         height: 50,
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
                 margin: EdgeInsets.only(right: 16),
@@ -87,7 +87,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   shape: BoxShape.circle,
                 ),
                 child: InkWell(
-                  onTap: () {},
                   child: Icon(Icons.play_arrow, color: AppColors.secondary3),
                 )),
             Text(

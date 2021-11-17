@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:game_mini/bloc/play_game_bloc.dart';
 import 'package:swipe_cards/swipe_cards.dart';
 
 class GamePlay extends StatefulWidget {
-  const GamePlay({Key? key}) : super(key: key);
+  const GamePlay({Key? key, int? id}) : super(key: key);
 
   @override
   _GamePlayState createState() => _GamePlayState();
@@ -15,8 +16,12 @@ class _GamePlayState extends State<GamePlay> {
   late MatchEngine _matchEngine;
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
   List<String> _names = ["Red", "Blue", "Green", "Yellow", "Orange"];
+  PlayGameBloc bloc = PlayGameBloc();
+
   @override
   void initState() {
+    bloc.getPlayGame();
+    super.initState();
     for(int i = 0; i< _names.length ;i++){
       _swipeItems.add(SwipeItem());
       likeAction: () {

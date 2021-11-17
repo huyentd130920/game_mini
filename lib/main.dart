@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:game_mini/screen/game.dart';
 import 'package:game_mini/screen/home_screen.dart';
+import 'package:game_mini/screen/result.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20.0),
               ),
               textTheme: ButtonTextTheme.primary)),
-      home: const HomeScreen(),
+      home: HomeScreen(),
+
     );
   }
 }
