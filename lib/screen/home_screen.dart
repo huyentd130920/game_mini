@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:game_mini/bloc/list_question_bloc.dart';
 import 'package:game_mini/data/app_color.dart';
-import 'package:game_mini/models/category.dart';
 import 'package:game_mini/models/question_list_model.dart';
 import 'package:game_mini/screen/game.dart';
 import 'package:game_mini/screen/play_game_screen.dart';
-import 'package:game_mini/ui/pages/screen_question/question_page.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -45,14 +43,14 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildQuestion(QuestionListModel? questionListMode ) {
+  Widget _buildQuestion(QuestionListModel? questionListMode) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
             context,
             MaterialPageRoute(
                 builder: (context) =>
-                    PlayGameScreen(id: int.parse(questionListMode!.id!))));
+                    GamePlay(id: int.parse(questionListMode!.id!))));
         showDialog(
             context: context,
             builder: (BuildContext context) {
